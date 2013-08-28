@@ -17,8 +17,17 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+    },
+    'consultation-ancien': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'foad',                      # Or path to database file if using sqlite3.
+        'USER': 'o',                      # Not used with sqlite3.
+        'PASSWORD': 'o',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    },
 }
+DATABASE_ROUTERS = ['foad.db.AncienRouter', ]
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -119,8 +128,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    #'django.contrib.admin',
+    'ancien',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
