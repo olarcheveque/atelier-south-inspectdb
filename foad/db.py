@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class AncienRouter(object):
     """
     Dans quelle BD trouver les modeles 'ancien'
@@ -9,5 +11,5 @@ class AncienRouter(object):
 
     def db_for_write(self, model, **hints):
         if model._meta.app_label == 'ancien':
-            return False
+            raise Exception('Écriture impossible')
         return None
