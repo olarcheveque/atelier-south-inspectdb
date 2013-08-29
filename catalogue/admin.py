@@ -4,5 +4,10 @@ from django.contrib import admin
 
 from .models import Formation, Universite
 
-admin.site.register(Formation)
+
+class FormationAdmin(admin.ModelAdmin):
+    list_display = ('titre', 'universite', )
+    list_filter = ('universite', )
+
+admin.site.register(Formation, FormationAdmin)
 admin.site.register(Universite)
